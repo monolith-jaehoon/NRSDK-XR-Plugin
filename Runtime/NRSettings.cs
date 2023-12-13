@@ -54,6 +54,8 @@ namespace Unity.XR.NRSDK
         {
 #if UNITY_ANDROID && !UNITY_EDITOR
             return m_UseMultiThread;
+#elif UNITY_STANDALONE_WIN
+            return true;
 #else
             return PlayerSettings.GetMobileMTRendering(BuildTargetGroup.Android);
 #endif
